@@ -481,4 +481,12 @@ LABEL_17:
 
 本文重点在用Frida监控方法调用，找到关键函数，并在ida中通过静态分析，查看伪代码找到加密算法的蛛丝马迹，并结合动态调试，打印出算法的参数和返回值，最终还原出清晰的逻辑。
 
+感谢您 帮忙在右上角 点个“⭐️”，非常感谢。
 
+可关注公众号，获取本次逆向app的二进制文件。
+
+## 多谢支持 ^_^
+<div align=center><img width="240" height="200" src="./images/zhifubao@2x.png"/><t/><img width="240" height="200" src="./images/wechatpay@2x.png"/></div>
+
+## 关注公众号：逆向APP
+<div align=center><img width="258" height="258" src="./images/qrcode_gongzhonghao.jpg"/>
