@@ -20,7 +20,7 @@ http://xxxx.xxxxxx.com/api/article/v2/get_category
 ### 使用frida调试
 1. frida的安装
 
-越狱手机安装Frida:在Cydia中添加源"https://build.frida.re/",接着在源中找到Frida并安装。
+越狱手机安装Frida:在Cydia中添加源(https://build.frida.re/),接着在源中找到Frida并安装。
 
 Mac安装frida:需要先有Python环境，使用“pip install frida”安装frida
 (Frida的详细使用请参考官网：www.frida.re)
