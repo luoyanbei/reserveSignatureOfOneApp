@@ -39,7 +39,7 @@ frida-ps -Ua
 ```
   PID  Name        Identifier                   
 -----  ----------  -----------------------------
-17521  Horoscope+  com.dailyhoroscopeplus.zodiac
+17521  H******e  com.d**********s.zodiac
  2048  支付宝         com.alipay.iphoneclient      
  4296  日历          com.apple.mobilecal          
  3551  相机          com.apple.camera  
@@ -483,7 +483,7 @@ LABEL_17:
 
 感谢您 帮忙在右上角 点个“⭐️”，非常感谢。
 
-可关注公众号，获取本次逆向app的二进制文件。
+可关注公众号，获取本次逆向app的素材文件，方便练习。
 
 ## 多谢支持 ^_^
 <div align=center><img width="240" height="200" src="./images/zhifubao@2x.png"/><t/><img width="240" height="200" src="./images/wechatpay@2x.png"/></div>
