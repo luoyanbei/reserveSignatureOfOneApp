@@ -39,14 +39,14 @@ frida-ps -Ua
 ```
   PID  Name        Identifier                   
 -----  ----------  -----------------------------
-17521  H******e  com.d**********s.zodiac
+17521  testApp  com.testApp.zodiac
  2048  支付宝         com.alipay.iphoneclient      
  4296  日历          com.apple.mobilecal          
  3551  相机          com.apple.camera  
 ```
-Horoscope+的PID是17521
+testApp的PID是17521
 
-监控Horoscope+中的"+[NSURL URLWithString:]"方法，终端命令：
+监控testApp中的"+[NSURL URLWithString:]"方法，终端命令：
 
 ```
 frida-trace -U 17521 -m "+[NSURL URLWithString:]"
@@ -105,32 +105,32 @@ frida-trace -U 17521 -m "+[NSURL URLWithString:]"
 当请求网络时，会看到终端的打印信息：
 
 ```
-4913 ms  +[NSURL URLWithString:http:/horoscope.ohippo.com/api/article/v2/get_list]
+4913 ms  +[NSURL URLWithString:http:/testApp.ohippo.com/api/article/v2/get_list]
   4913 ms  	Backtrace:
-	0x100bdfecc Horoscope!0xb87ecc
-	0x100be0294 Horoscope!0xb88294
-	0x1001dcee4 Horoscope!0x184ee4
-	0x1001dd6d4 Horoscope!0x1856d4
-	0x100087d18 Horoscope!0x2fd18
-	0x100086ef4 Horoscope!0x2eef4
+	0x100bdfecc testApp!0xb87ecc
+	0x100be0294 testApp!0xb88294
+	0x1001dcee4 testApp!0x184ee4
+	0x1001dd6d4 testApp!0x1856d4
+	0x100087d18 testApp!0x2fd18
+	0x100086ef4 testApp!0x2eef4
 	0x193ce8ec0 UIKit!-[UIViewController loadViewIfRequired]
 	0x193ce8a9c UIKit!-[UIViewController view]
-	0x100176df0 Horoscope!0x11edf0
-	0x10014dbcc Horoscope!0xf5bcc
+	0x100176df0 testApp!0x11edf0
+	0x10014dbcc testApp!0xf5bcc
 	0x193d1e010 UIKit!-[UIApplication sendAction:to:from:forEvent:]
 	0x193d1df90 UIKit!-[UIControl sendAction:to:forEvent:]
 	0x193d08504 UIKit!-[UIControl _sendActionsForEvents:withEvent:]
 	0x193d1d874 UIKit!-[UIControl touchesEnded:withEvent:]
 	0x193d1d390 UIKit!-[UIWindow _sendTouchesForEvent:]
 	0x193d18728 UIKit!-[UIWindow sendEvent:]
-  4916 ms  +[NSURL URLWithString:]--return=(http:/horoscope.ohippo.com/api/article/v2/get_list)
+  4916 ms  +[NSURL URLWithString:]--return=(http:/testApp.ohippo.com/api/article/v2/get_list)
 ```
 打印的信息很多，这里只截取了一部分有用的打印信息。
 
 使用lldb+debugserver附加当前进程，打印模块偏移地址如下：
 
 ```
-[  0] 0x0000000000058000 /var/containers/Bundle/Application/FA17E6F7-4386-40B1-8B87-0A138169E67F/Horoscope.app/Horoscope(0x0000000100058000)
+[  0] 0x0000000000058000 /var/containers/Bundle/Application/FA17E6F7-4386-40B1-8B87-0A138169E67F/testApp.app/testApp(0x0000000100058000)
 [  1] 0x0000000101634000 /Users/king/Library/Developer/Xcode/iOS DeviceSupport/10.3.2 (14F89)/Symbols/usr/lib/dyld
 ...
 ...
